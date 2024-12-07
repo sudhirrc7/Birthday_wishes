@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Dear Sanskruti!</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: "Arial", sans-serif;
+      }
+      .birthday-card {
+        transition: all 0.3s ease;
+      }
+      .birthday-card:hover {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+      }
+      .confetti {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        opacity: 0.7;
+        animation: fall 5s linear infinite;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+      .card-image {
+        transition: opacity 0.5s ease;
+        width: 100%;
+        height: auto; /* Maintain the natural aspect ratio */
+        display: block;
+        padding: 1rem; /* Optional: Add padding for better spacing */
+      }
+    </style>
+  </head>
+  <body class="bg-purple-600 min-h-screen p-8">
+    <div
+      id="confetti-container"
+      class="fixed top-0 left-0 w-full h-full pointer-events-none"
+    ></div>
+
+    <div class="container mx-auto">
+      <h1
+        class="text-6xl font-extrabold text-center bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-teal-400 mb-12"
+        style="font-family: &quot;Pacifico&quot;, cursive"
+      >
+        🎉💛 Happy Birthday, Dear Sanskruti! 🎂🎁🌟 🥳
+      </h1>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Cake Wishes Card -->
+        <div
+          class="birthday-card bg-white rounded-xl shadow-lg p-6 text-center"
+          data-card-type="cake"
+        >
+          <h2 class="text-3xl font-bold text-purple-600 mb-4">
+            Wish you a happy birthday dear 🎂
+          </h2>
+          <img
+            src="assets/cake1.jpg"
+            alt="Birthday Cake"
+            class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
+          />
+          <p class="text-gray-700 mb-4">
+            Happy Birthday, Sanskruti! Your presence lights up every
+            moment—here's to a day as special as you!
+          </p>
+          <button
+            onclick="changeCardContent(this)"
+            class="bg-purple-500 text-white px-4 py-2 rounded-full hover:bg-purple-600"
+          >
+            New Wish
+          </button>
+        </div>
+
+        <!-- Balloon Blast Card -->
+        <div
+          class="birthday-card bg-pink-100 rounded-xl shadow-lg p-6 text-center"
+          data-card-type="balloon"
+        >
+          <h2 class="text-3xl font-bold text-pink-600 mb-4">
+            Have a blast celebrating your birthday 🎉
+          </h2>
+          <img
+            src="assets/ballon1.jpg"
+            alt="Birthday Balloons"
+            class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
+          />
+          <p class="text-gray-700 mb-4">
+            Happy Birthday to someone who fills life with meaning and memories.
+            Your presence is a gift in itself!
+          </p>
+          <button
+            onclick="changeCardContent(this)"
+            class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600"
+          >
+            New Wish
+          </button>
+        </div>
+
+        <!-- Party Time Card -->
+        <div
+          class="birthday-card bg-blue-100 rounded-xl shadow-lg p-6 text-center"
+          data-card-type="party"
+        >
+          <h2 class="text-3xl font-bold text-blue-600 mb-4">
+            Happy 22nd Birthday 😀
+          </h2>
+          <img
+            src="assets/party1.jpg"
+            alt="Birthday Party"
+            class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
+          />
+          <p class="text-gray-700 mb-4">
+            There’s no one like you, and today is proof that the world
+            celebrates its most special souls. Happy Birthday!
+          </p>
+          <button
+            onclick="changeCardContent(this)"
+            class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600"
+          >
+            New Wish
+          </button>
+        </div>
+
+        <!-- Gifts Card -->
+        <div
+          class="birthday-card bg-green-100 rounded-xl shadow-lg p-6 text-center"
+          data-card-type="gifts"
+        >
+          <h2 class="text-3xl font-bold text-green-600 mb-4">
+            You are the most beautiful girl in the world 😍
+          </h2>
+          <img
+            src="assets/gifts1.jpg"
+            alt="Birthday Gifts"
+            class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
+          />
+          <p class="text-gray-700 mb-4">
+            You make every day brighter and every memory sweeter. Wishing you
+            the happiest birthday!
+          </p>
+          <button
+            onclick="changeCardContent(this)"
+            class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600"
+          >
+            New Wish
+          </button>
+        </div>
+
+        <!-- Memories Card -->
+        <div
+          class="birthday-card bg-yellow-100 rounded-xl shadow-lg p-6 text-center"
+          data-card-type="memories"
+        >
+          <h2 class="text-3xl font-bold text-yellow-600 mb-4">
+            Cherish your memories 😎
+          </h2>
+          <img
+            src="assets/moment1.jpg"
+            alt="Birthday Memories"
+            class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
+          />
+          <p class="text-gray-700 mb-4">
+            You’re not just special—you’re irreplaceable. I hope this birthday
+            reminds you of how much you’re loved.
+          </p>
+          <button
+            onclick="changeCardContent(this)"
+            class="bg-yellow-500 text-white px-4 py-2 rounded-full hover:bg-yellow-600"
+          >
+            New Wish
+          </button>
+        </div>
+
+        <!-- Friendship Card -->
+        <div
+          class="birthday-card bg-red-100 rounded-xl shadow-lg p-6 text-center"
+          data-card-type="friendship"
+        >
+          <h2 class="text-3xl font-bold text-red-600 mb-4">
+            Hope we stay friends forever 👫
+          </h2>
+          <img
+            src="assets/friendship1.jpg"
+            alt="Birthday Friendship"
+            class="card-image mx-auto rounded-lg mb-6 w-full h-48 object-cover"
+          />
+          <p class="text-gray-700 mb-4">Celebrating our amazing friendship!</p>
+          <button
+            onclick="changeCardContent(this)"
+            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600"
+          >
+            New Wish
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const imageCollections = {
+        cake: [
+          "assets/cake1.jpg",
+          "assets/cake2.jpg",
+          "assets/friendship1.jpg",
+          "assets/friendship2.jpg",
+        ],
+        balloon: [
+          "assets/ballon1.jpg",
+          "assets/ballon2.jpg",
+          "assets/friendship3.jpg",
+          "assets/friendship4.jpg",
+        ],
+        party: [
+          "assets/party1.jpg",
+          "assets/party2.jpg",
+          "assets/cake2.jpg",
+          "assets/cake1.jpg",
+        ],
+        gifts: [
+          "assets/gifts1.jpg",
+          "assets/gift2.jpg",
+          "assets/ballon2.jpg",
+          "assets/ballon1.jpg",
+        ],
+        memories: [
+          "assets/moment1.jpg",
+          "assets/moment2.jpg",
+          "assets/party2.jpg",
+          "assets/party1.jpg",
+        ],
+        friendship: [
+          "assets/friendship1.jpg",
+          "assets/friendship2.jpg",
+          "assets/friendship3.jpg",
+          "assets/friendship4.jpg",
+        ],
+      };
+
+      const messages = {
+        cake: [
+          "Sanskruti, you are truly one of a kind. Celebrate this day knowing how much you mean to those around you!",
+          "There are friends, and then there’s you—someone who is in a league of her own. Have the happiest birthday!",
+          "Not everyone gets to meet someone who’s a constant source of joy, but I did—and today, we celebrate you!",
+          "You’ve always held a special place in my heart, and today is the perfect chance to celebrate the amazing person you are.",
+        ],
+        balloon: [
+          "You’re not just special—you’re irreplaceable. I hope this birthday reminds you of how much you’re loved.",
+          "Happy Birthday to the most incredible person I know, Sanskruti! May your day be as radiant as your smile.",
+          "You deserve every ounce of happiness today, Sanskruti. Thank you for being such a beautiful part of my life.",
+          "Dear Sanskruti, birthdays come every year, but amazing people like you are once in a lifetime. Have the best day!",
+        ],
+        party: [
+          "Happy Birthday to someone who fills life with meaning and memories. Your presence is a gift in itself.",
+          "You deserve all the love and laughter this world can offer. Here’s to another beautiful year ahead!",
+          "May this year bring you as much happiness as you bring to others. You’re a blessing to everyone around you.",
+          "Let’s celebrate you today and every day because you’re truly extraordinary!",
+        ],
+        gifts: [
+          "You’ve made my life so much brighter just by being in it. Today, let’s celebrate the wonderful person you are!",
+          "Unwrapping joy and surprises! Each gift is a reminder of how cherished you are.",
+          "On your special day, I hope you feel as loved and celebrated as you make everyone else feel.",
+          "Surprises that speak volumes! May your day be filled with everything you love.",
+        ],
+        memories: [
+          "Celebrating the beautiful journey we’ve shared! Every moment tells a story of joy and connection.",
+          "Memories that last a lifetime! Reflecting on the incredible times with you.",
+          "Happy Birthday to someone whose smile makes every moment brighter. Here’s to creating more unforgettable memories!",
+          "Reflecting on amazing times and looking forward to more adventures with you!",
+        ],
+        friendship: [
+          "Cheers to friendship and love! Thank you for being such an irreplaceable part of my life.",
+          "Grateful for this incredible bond! Wishing you all the happiness in the world on your special day.",
+          "Celebrating our amazing friendship and all the moments that make life beautiful with you.",
+          "Friends like you make life worth celebrating. Here’s to another fantastic year together!",
+        ],
+      };
+
+      function changeCardContent(button) {
+        const card = button.closest(".birthday-card");
+        const cardType = card.dataset.cardType;
+        const imageElement = card.querySelector(".card-image");
+        const messageElement = card.querySelector("p");
+
+        // Shuffle image
+        const images = imageCollections[cardType];
+        const currentImageIndex = images.indexOf(imageElement.src);
+        let newImageIndex = currentImageIndex;
+
+        // Ensure we get a different image
+        while (newImageIndex === currentImageIndex) {
+          newImageIndex = Math.floor(Math.random() * images.length);
+        }
+
+        // Fade out current image
+        imageElement.style.opacity = 0;
+
+        // Change image after fade out
+        setTimeout(() => {
+          imageElement.src = images[newImageIndex];
+          imageElement.style.opacity = 1;
+        }, 500);
+
+        // Change message
+        const messageSet = messages[cardType];
+        const randomMessage =
+          messageSet[Math.floor(Math.random() * messageSet.length)];
+        messageElement.textContent = randomMessage;
+      }
+
+      function createConfetti() {
+        const container = document.getElementById("confetti-container");
+        for (let i = 0; i < 200; i++) {
+          const confetti = document.createElement("div");
+          confetti.classList.add("confetti");
+          confetti.style.left = Math.random() * 100 + "%";
+          confetti.style.animationDelay = Math.random() * 5 + "s";
+          confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+          container.appendChild(confetti);
+        }
+      }
+
+      // Initialize confetti on page load
+      createConfetti();
+    </script>
+  </body>
+</html>
