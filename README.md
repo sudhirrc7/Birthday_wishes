@@ -23,5 +23,5 @@ A vibrant and interactive webpage made for my good friend designed to celebrate 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/happy-birthday-celebration.git
+   git clone https://github.com/sudhirrc7/Birthday_wishes
    ```
