@@ -1,0 +1,36 @@
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: "Arial", sans-serif;
+}
+
+.birthday-card {
+  transition: all 0.3s ease;
+}
+
+.birthday-card:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  opacity: 0.7;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+.card-image {
+  transition: opacity 0.5s ease;
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 1rem;
+} 
