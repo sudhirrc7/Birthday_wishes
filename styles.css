@@ -1,36 +1,119 @@
 body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  font-family: "Arial", sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: "Arial", sans-serif;
 }
 
 .birthday-card {
-  transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    min-height: 400px;
+    justify-content: space-between;
 }
 
 .birthday-card:hover {
-  transform: scale(1.05) rotate(2deg);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-}
-
-.confetti {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  opacity: 0.7;
-  animation: fall 5s linear infinite;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(100vh) rotate(360deg);
-  }
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .card-image {
-  transition: opacity 0.5s ease;
-  width: 100%;
-  height: auto;
-  display: block;
-  padding: 1rem;
-} 
+    transition: opacity 0.5s ease;
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 1rem;
+}
+
+/* Add a floating animation for cards */
+.birthday-card {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* Add different delays to each card to create a wave effect */
+.birthday-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.birthday-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.birthday-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.birthday-card:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.birthday-card:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.birthday-card:nth-child(6) {
+    animation-delay: 1s;
+}
+
+/* Confetti styles */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+}
+
+/* Regular falling confetti animation */
+.confetti:not(.from-button) {
+    animation: confetti-fall 5s linear infinite;
+}
+
+/* Button-triggered confetti animation */
+.confetti.from-button {
+    animation: confetti-explosion 3s ease-out forwards;
+    transform-origin: center;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+@keyframes confetti-explosion {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: 
+            translate(
+                calc(cos(var(--angle)) * 100px * var(--speed)),
+                calc(sin(var(--angle)) * 100px * var(--speed))
+            )
+            rotate(720deg);
+        opacity: 0;
+    }
+}
+
